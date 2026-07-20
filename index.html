@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FeedFwd — Stop reviewing the past. Start advising the future.</title>
+<meta name="description" content="FeedFwd runs on missions, not review cycles. Give your team the advice they need to get it done — actionable, timely, continuous.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="#" class="logo">
+      <span class="logo__mark">⏭</span>
+      <span class="logo__word">feedfwd</span>
+    </a>
+
+    <nav class="nav__links" id="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#">Sign in</a>
+      <a href="#cta" class="btn btn--primary btn--small">Start free</a>
+    </nav>
+
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__media" aria-hidden="true">
+      <video id="hero-video" autoplay muted playsinline class="hero__video">
+        <source src="assets/video/hero-background.mp4" type="video/mp4">
+      </video>
+      <div class="hero__scrim"></div>
+      <div class="hero__vignette"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow eyebrow--light">Feed Forward &nbsp;<i>noun</i>&nbsp; /fēd fôrwerd/</p>
+      <h1 class="hero__title">Stop reviewing the past. Start advising the future.</h1>
+      <p class="hero__subtitle">
+        FeedFwd runs on missions, not review cycles. Your teams have things to do and goals to achieve. Give them the advice they need to get it done.
+        <br><br>
+        Actionable. Timely. Continuous.
+      </p>
+      <div class="hero__actions">
+        <a href="#cta" class="btn btn--primary btn--large">Start free</a>
+        <span class="hero__note">No credit card, no sales call</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--light eyebrow--center">Different by design</p>
+      <h2 class="section-title section-title--light">Feedforward, not feedback.</h2>
+
+      <div class="benefits__grid" id="benefits-grid">
+        <!-- Benefit cards are injected by js/main.js from the same data used in the original design -->
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--center">How it works</p>
+      <h2 class="section-title">Three steps. Done.</h2>
+
+      <div class="step">
+        <div class="step__text">
+          <div class="step__number">01</div>
+          <h3 class="step__title">Set a mission</h3>
+          <p class="step__desc">Agree an outcome with your team member. Not a job title, an actual goal — with a timeframe that fits the work.</p>
+        </div>
+        <div class="step__media">
+          <img src="assets/images/missions.png" alt="Setting a mission in FeedFwd" class="step__screenshot">
+        </div>
+      </div>
+
+      <div class="step step--reverse">
+        <div class="step__text">
+          <div class="step__number">02</div>
+          <h3 class="step__title">Add advisors</h3>
+          <p class="step__desc">Bring in the people who can help them get there — on the team or outside it. Advisors need no account and no app, just a link.</p>
+        </div>
+        <div class="step__media">
+          <img src="assets/images/advisors.png" alt="Adding advisors to a mission" class="step__screenshot">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__text">
+          <div class="step__number">03</div>
+          <h3 class="step__title">Get continuous input</h3>
+          <p class="step__desc">Advice arrives throughout the mission, not just at the end — while it can still change the outcome. Reminders run themselves.</p>
+        </div>
+        <div class="step__media">
+          <img src="assets/images/feedforward.png" alt="Advisor feedforward form" class="step__screenshot">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="section-inner section-inner--narrow">
+      <div class="pricing__header">
+        <p class="eyebrow eyebrow--center">Pricing</p>
+        <h2 class="section-title">Free to start. Simple to grow.</h2>
+      </div>
+
+      <div class="pricing__grid">
+
+        <div class="plan">
+          <p class="plan__label">Team</p>
+          <div class="plan__price">Free</div>
+          <p class="plan__caption">For up to 20 people, including you.</p>
+          <ul class="plan__features">
+            <li><span class="check">✓</span>Unlimited missions</li>
+            <li><span class="check">✓</span>Unlimited advisors</li>
+            <li><span class="check">✓</span>Unlimited feedforward requests</li>
+          </ul>
+          <p class="plan__footnote">Integrations not supported.</p>
+          <a href="#cta" class="btn btn--outline">Start free</a>
+        </div>
+
+        <div class="plan plan--dark">
+          <p class="plan__label">Org</p>
+          <div class="plan__price-row">
+            <span class="plan__price" id="org-price">$4</span>
+            <span class="plan__price-unit">/seat/month</span>
+          </div>
+          <p class="plan__caption">
+            <span id="org-billing-note">billed annually</span>
+            ·
+            <a href="#" id="billing-toggle" class="plan__toggle-link">switch to monthly</a>
+          </p>
+          <ul class="plan__features">
+            <li><span class="check check--accent">✓</span>Everything in Team, plus:</li>
+            <li><span class="check check--accent">✓</span>Shared visibility across teams</li>
+            <li><span class="check check--accent">✓</span>Integrations incl. MCP</li>
+          </ul>
+          <p class="plan__footnote plan__footnote--dark">125+ seats? Flat rate available at $499/month, billed annually.</p>
+          <a href="#cta" class="btn btn--primary">Talk to us</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="cta">
+    <h2 class="final-cta__title">Ready to stop reviewing the past? Start free.</h2>
+    <a href="#" class="btn btn--primary btn--large">Start free</a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="logo logo--small">
+    <span class="logo__mark logo__mark--small">⏭</span>
+    <span class="logo__word logo__word--small">feedfwd</span>
+  </div>
+  <span class="footer__copy">© 2026 FeedFwd, Inc. — Feedforward, not feedback.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
