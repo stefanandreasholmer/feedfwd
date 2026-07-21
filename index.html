@@ -26,7 +26,7 @@
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#">Sign in</a>
-      <a href="#cta" class="btn btn--primary btn--small">Start free</a>
+      <a href="#cta" class="btn btn--primary btn--small" data-signup-trigger>Start free</a>
     </nav>
 
     <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
@@ -58,7 +58,7 @@
         Actionable. Timely. Automated.
       </p>
       <div class="hero__actions">
-        <a href="#cta" class="btn btn--primary btn--large">Start free</a>
+        <a href="#cta" class="btn btn--primary btn--large" data-signup-trigger>Start free</a>
         <span class="hero__note">No credit card, no sales call</span>
       </div>
     </div>
@@ -67,8 +67,8 @@
   <!-- BENEFITS -->
   <section class="benefits">
     <div class="section-inner">
-      <p class="eyebrow eyebrow--light eyebrow--center">Different by design</p>
-      <h2 class="section-title section-title--light">Feedforward, not feedback.</h2>
+      <p class="eyebrow eyebrow--center">Different by design</p>
+      <h2 class="section-title">Feedforward, not feedback.</h2>
 
       <div class="benefits__grid" id="benefits-grid">
         <!-- Benefit cards are injected by js/main.js from the same data used in the original design -->
@@ -121,8 +121,8 @@
   <section class="pricing" id="pricing">
     <div class="section-inner section-inner--narrow">
       <div class="pricing__header">
-        <p class="eyebrow eyebrow--center">Pricing</p>
-        <h2 class="section-title">Free to start. Simple to grow.</h2>
+        <p class="eyebrow eyebrow--light eyebrow--center">Pricing</p>
+        <h2 class="section-title section-title--light">Free to start. Simple to grow.</h2>
       </div>
 
       <div class="pricing__grid">
@@ -137,10 +137,10 @@
             <li><span class="check">✓</span>Unlimited feedforward requests</li>
           </ul>
           <p class="plan__footnote">Integrations not supported.</p>
-          <a href="#cta" class="btn btn--outline">Start free</a>
+          <a href="#cta" class="btn btn--outline" data-signup-trigger>Start free</a>
         </div>
 
-        <div class="plan plan--dark">
+        <div class="plan plan--accent">
           <p class="plan__label">Org</p>
           <div class="plan__price-row">
             <span class="plan__price" id="org-price">$4</span>
@@ -156,8 +156,8 @@
             <li><span class="check check--accent">✓</span>Shared visibility across teams</li>
             <li><span class="check check--accent">✓</span>Integrations incl. MCP</li>
           </ul>
-          <p class="plan__footnote plan__footnote--dark">125+ seats? Flat rate at $499/month, billed annually.</p>
-          <a href="#cta" class="btn btn--primary">Talk to us</a>
+          <p class="plan__footnote plan__footnote--accent">125+ seats? Flat rate at $499/month, billed annually.</p>
+          <a href="#cta" class="btn btn--primary" data-signup-trigger>Talk to us</a>
         </div>
 
       </div>
@@ -169,13 +169,13 @@
     <div class="section-inner section-inner--narrow">
       <div class="story__grid">
         <div class="story__media">
-          <img src="assets/images/andreasfirst.png" alt="Andreas and First, FeedFwd co-founders" class="story__photo">
+          <img src="assets/images/team.png" alt="Andreas and First, FeedFwd co-founders" class="story__photo">
         </div>
         <div class="story__text">
           <p class="eyebrow">Why we built this</p>
-          <h2 class="story__heading">Before FeedFwd was software, it was a decade of trial and error inside a real company.</h2>
-          <p class="story__body">At a software engineering company that employed some 240 people over its lifetime, we built and iterated on continuous, public feedback, self-management, and coaching, refined by hand, year after year, long before there was a product behind any of it. No annual review theater, no anonymous surveys. It worked well enough that people who left years ago still tell us they wish their current job ran the same way.</p>
-          <p class="story__body">We lived it from both sides, one of us running the company, the other an engineer inside it. FeedFwd is that decade-plus of iteration, turned into software.</p>
+          <h2 class="story__heading">Before FeedFwd was software, it was a way of working we spent more than a decade refining inside a real company.</h2>
+          <p class="story__body">At a software engineering company where 240 people worked over the years, we built a culture of continuous, open feedback, self-management, and coaching—without annual-review theater or anonymous surveys. It worked: former colleagues still tell us they wish their current workplace ran the same way.</p>
+          <p class="story__body">We experienced it from both sides—Andreas leading the company and First working as an engineer. FeedFwd turns what we learned into software.</p>
           <p class="story__signature">Andreas &amp; First</p>
         </div>
       </div>
@@ -185,7 +185,7 @@
   <!-- FINAL CTA -->
   <section class="final-cta" id="cta">
     <h2 class="final-cta__title">Ready to stop reviewing the past? Start free.</h2>
-    <a href="#" class="btn btn--primary btn--large">Start free</a>
+    <a href="#" class="btn btn--primary btn--large" data-signup-trigger>Start free</a>
   </section>
 
 </main>
@@ -199,6 +199,68 @@
   <span class="footer__copy">© 2026 FeedFwd, Inc. — Feedforward, not feedback.</span>
 </footer>
 
+<!-- SIGNUP MODAL -->
+<div class="modal" id="signup-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="signup-modal-title">
+    <button type="button" class="modal__close" data-modal-close aria-label="Close">&times;</button>
+    <h2 id="signup-modal-title" class="modal__title">Join the waitlist</h2>
+    <p class="modal__subtitle">FeedFwd isn't live yet — leave your email and we'll let you know the moment it is.</p>
+    <div class="modal__body">
+      <!-- MailerLite embed (form 193609136385033864). Styled via the
+           "Signup form" section in css/styles.css instead of MailerLite's
+           default CSS — the markup/classes below are otherwise untouched
+           since MailerLite's script relies on them for AJAX submit and
+           the success-state swap. -->
+      <div id="mlb2-43969544" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-43969544">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/539507/forms/193609136385033864/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email address..." autocomplete="email">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="btn btn--primary primary">Join Waitlist</button>
+                  <button disabled="disabled" style="display: none;" type="button" class="btn btn--primary loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successContent">
+                <h4>Thank you!</h4>
+                <p>You have successfully joined our subscriber list.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
+
+<!-- MailerLite embed scripts (form 193609136385033864) -->
+<script>
+  function ml_webform_success_43969544() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-43969544 .row-success').show();
+    $('.ml-subscribe-form-43969544 .row-form').hide();
+  }
+</script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+<script>
+  fetch("https://assets.mailerlite.com/jsonp/539507/forms/193609136385033864/takel")
+</script>
 </body>
 </html>

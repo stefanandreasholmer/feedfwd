@@ -346,8 +346,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* --- Benefits ------------------------------------------------------------ */
 
 .benefits {
-  background: var(--color-green);
-  color: var(--text-on-green-strong);
+  background: var(--color-orange);
+  color: var(--text-on-cream-strong);
   padding: 80px 0;
 }
 
@@ -366,8 +366,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .benefit-card {
-  background: rgba(249, 247, 246, 0.06);
-  border: 1px solid rgba(249, 247, 246, 0.14);
+  background: var(--color-cream);
+  border: 1px solid rgba(30, 58, 47, 0.1);
   border-radius: 18px;
   padding: 28px 24px;
 }
@@ -384,15 +384,15 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 600;
-  color: var(--text-on-green-strong);
+  color: var(--text-on-cream-strong);
 }
 
-.benefit-card__arrow { color: var(--color-orange); font-size: 15px; }
+.benefit-card__arrow { color: var(--text-on-cream-soft); font-size: 15px; }
 
 .benefit-card__desc {
   font-size: 14.5px;
   line-height: 1.55;
-  color: var(--text-on-green);
+  color: rgba(30, 58, 47, 0.75);
   margin: 0;
 }
 
@@ -403,8 +403,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-orange);
-  background: rgba(242, 168, 75, 0.16);
+  color: var(--text-on-cream-strong);
+  background: rgba(30, 58, 47, 0.12);
   padding: 4px 10px;
   border-radius: 999px;
 }
@@ -469,7 +469,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* --- Pricing --------------------------------------------------------------- */
 
-.pricing { background: var(--color-orange); padding: 80px 0; }
+.pricing { background: var(--color-green); padding: 80px 0; }
 
 .pricing__header { text-align: center; margin-bottom: 40px; }
 
@@ -484,13 +484,13 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .plan {
-  background: #fff;
+  background: var(--color-cream);
   border: 1px solid rgba(30, 58, 47, 0.1);
   border-radius: 20px;
   padding: 32px 28px;
 }
 
-.plan--dark { background: var(--color-green); color: var(--text-on-green-strong); border: none; }
+.plan--accent { background: var(--color-orange); color: var(--text-on-cream-strong); border: none; }
 
 .plan__label {
   font-size: 12px;
@@ -501,7 +501,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 0 0 12px;
 }
 
-.plan--dark .plan__label { color: var(--text-on-green-soft); }
+.plan--accent .plan__label { color: rgba(30, 58, 47, 0.6); }
 
 .plan__price {
   font-family: var(--font-serif);
@@ -517,7 +517,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin-bottom: 6px;
 }
 
-.plan__price-unit { font-size: 14px; color: var(--text-on-green-soft); }
+.plan__price-unit { font-size: 14px; color: rgba(30, 58, 47, 0.6); }
 
 .plan__caption {
   font-size: 14px;
@@ -525,9 +525,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 0 0 22px;
 }
 
-.plan--dark .plan__caption { color: var(--text-on-green-soft); }
+.plan--accent .plan__caption { color: rgba(30, 58, 47, 0.65); }
 
-.plan__toggle-link { color: var(--color-orange); text-decoration: underline; }
+.plan__toggle-link { color: var(--color-green); text-decoration: underline; }
 
 .plan__features {
   display: flex;
@@ -544,7 +544,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--text-on-cream);
 }
 
-.plan--dark .plan__features li { color: var(--text-on-green); }
+.plan--accent .plan__features li { color: rgba(30, 58, 47, 0.85); }
 
 .check {
   flex-shrink: 0;
@@ -559,7 +559,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin-top: 1px;
 }
 
-.check--accent { background: rgba(242, 168, 75, 0.2); color: var(--color-orange); }
+.check--accent { background: rgba(30, 58, 47, 0.14); color: var(--text-on-cream-strong); }
 
 .plan__footnote {
   font-size: 13px;
@@ -567,7 +567,15 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 0 0 26px;
 }
 
-.plan__footnote--dark { color: var(--text-on-green-soft); }
+.plan__footnote--accent { color: rgba(30, 58, 47, 0.6); }
+
+.plan--accent .btn--primary {
+  background: var(--color-green);
+  color: var(--color-cream);
+  box-shadow: 0 10px 24px -12px rgba(30, 58, 47, 0.35);
+}
+
+.plan--accent .btn--primary:hover { background: #16291f; }
 
 /* --- Why we built this ------------------------------------------------------ */
 
@@ -660,4 +668,154 @@ ul { list-style: none; margin: 0; padding: 0; }
     justify-content: space-between;
     text-align: left;
   }
+}
+
+/* --- Signup modal ---------------------------------------------------------- */
+
+body.modal-open { overflow: hidden; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal[hidden] { display: none; }
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 38, 30, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal__dialog {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-cream);
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.35);
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(30, 58, 47, 0.08);
+  color: var(--text-on-cream-strong);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__close:hover { background: rgba(30, 58, 47, 0.14); }
+
+.modal__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  padding-right: 32px;
+}
+
+.modal__subtitle {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-on-cream);
+  margin: 0 0 24px;
+}
+
+/* --- Signup form (MailerLite embed) ---------------------------------------- */
+
+.ml-field-group { margin-bottom: 16px; }
+
+.ml-field-group input[type="email"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 18px;
+  border: 1px solid rgba(30, 58, 47, 0.18);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--text-on-cream-strong);
+  background: #fff;
+}
+
+.ml-field-group input[type="email"]::placeholder { color: rgba(30, 58, 47, 0.4); }
+
+.ml-error input { border-color: #c0392b !important; }
+
+.ml-form-embedSubmit .btn {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 15px;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ml-form-embedSubmitLoad {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.ml-form-embedSubmitLoad::after {
+  content: " ";
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-color: #fff #fff #fff transparent;
+  animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+}
+
+@keyframes ml-form-embedSubmitLoad {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.ml-form-successContent h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0 0 6px;
+  color: var(--text-on-cream-strong);
+}
+
+.ml-form-successContent p {
+  font-size: 15px;
+  color: var(--text-on-cream);
+  margin: 0;
 }
