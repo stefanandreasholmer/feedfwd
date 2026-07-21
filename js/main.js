@@ -1,22 +1,4 @@
 // ---------------------------------------------------------------------------
-// Hero video: loop just the first 8 seconds
-// ---------------------------------------------------------------------------
-
-const heroVideo = document.getElementById('hero-video');
-
-if (heroVideo) {
-  const loopEnd = 8;
-
-  const tick = () => {
-    if (heroVideo.currentTime >= loopEnd) heroVideo.currentTime = 0;
-    requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-
-  heroVideo.play().catch(() => {});
-}
-
-// ---------------------------------------------------------------------------
 // Mobile nav toggle
 // ---------------------------------------------------------------------------
 
