@@ -40,12 +40,15 @@ navLinks.querySelectorAll('a').forEach((link) => {
 // ---------------------------------------------------------------------------
 
 const benefits = [
-  { from: 'Reviewers', to: 'Advisors', desc: 'The people around your team member help them succeed, not just rate their behaviour.' },
-  { from: 'End-of-cycle', to: 'Continuous', desc: 'Input arrives throughout the mission, while it can still help, not stockpiled for one review at the end.' },
-  { from: 'Manual', to: 'Automated', desc: 'No chasing people for input. Reminders and follow-ups happen automatically.' },
-  { from: 'Reviews', to: 'Advice', desc: 'Your team gets input on how to hit their goal, not a scorecard on their last six months.' },
-  { from: 'Cycles', to: 'Missions', desc: 'No fixed quarterly or annual window. Input follows how long the goal actually takes.' },
-  { from: 'Dashboards', to: 'Agents', desc: 'Query your team’s mission data directly instead of scrolling through a dashboard.', tag: 'Org only' },
+  { from: 'Cycles', to: 'Missions', desc: 'No more annual, one-size-fits-all cycles. FeedFwd is organised around missions and the objectives that define them.' },
+  { from: 'Uniform', to: 'Personalized', desc: 'One person’s mission might run three months. Another’s, two years. FeedFwd lets you set a cadence that’s right for each person.' },
+  { from: 'Feedback', to: 'Feedforward', desc: 'Feedback is a judgement on past performance. FeedFwd gives advice on how to reach what’s ahead.' },
+  { from: 'Reviewers', to: 'Advisors', desc: 'Feedback asks reviewers to pass judgement on behaviour. FeedFwd asks stakeholders for advice on how to help someone succeed.' },
+  { from: 'Individuals + Teams', desc: 'Performance is a team sport, and missions aren’t just for one person. A whole team can share a mission and get advice together.' },
+  { from: 'Anonymous', to: 'Public', desc: 'Anonymous feedback tends to get personal. FeedFwd focuses on the mission, not the person, and is transparent by default.' },
+  { from: 'End-of-Cycle', to: 'Continuous', desc: '360 feedback usually lands at the end of the cycle. FeedFwd ensures advice arrives throughout the mission.' },
+  { from: 'Manual', to: 'Automated', desc: 'Stop chasing people for input. FeedFwd handles reminders and follow-ups automatically, so you don’t have to.' },
+  { from: 'Dashboards', to: 'Agents', desc: 'No more scrolling through dashboards for answers. FeedFwd lets you query your team’s mission data in natural language.', tag: 'Org only' },
 ];
 
 const benefitsGrid = document.getElementById('benefits-grid');
@@ -54,8 +57,10 @@ benefitsGrid.innerHTML = benefits.map((b) => `
   <div class="benefit-card">
     <div class="benefit-card__row">
       <span class="benefit-card__word">${b.from}</span>
-      <span class="benefit-card__arrow">→</span>
-      <span class="benefit-card__word">${b.to}</span>
+      ${b.to ? `
+        <span class="benefit-card__arrow">→</span>
+        <span class="benefit-card__word">${b.to}</span>
+      ` : ''}
     </div>
     <p class="benefit-card__desc">${b.desc}</p>
     ${b.tag ? `<span class="benefit-card__tag">${b.tag}</span>` : ''}
