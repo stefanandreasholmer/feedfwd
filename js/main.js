@@ -1,4 +1,19 @@
 // ---------------------------------------------------------------------------
+// App links: the product lives on its own subdomain. Change the host here only.
+// ---------------------------------------------------------------------------
+
+const APP_URL = 'https://app.feedfwd.app';
+
+// While false, every "Start free" opens the waitlist modal. Set to true once
+// public sign-up is open in the app: "Start free" then goes to the app's
+// sign-in page, which signs new people up too. "Talk to us" stays on the modal.
+const SIGNUP_OPEN = false;
+
+document.querySelectorAll('[data-app-path]').forEach((link) => {
+  link.href = APP_URL + link.dataset.appPath;
+});
+
+// ---------------------------------------------------------------------------
 // Mobile nav toggle
 // ---------------------------------------------------------------------------
 
@@ -72,8 +87,8 @@ billingToggle.addEventListener('click', (e) => {
 renderBilling();
 
 // ---------------------------------------------------------------------------
-// Signup modal — the app isn't live yet, so every signup CTA opens this
-// instead of linking anywhere.
+// Signup modal — while SIGNUP_OPEN is false, every signup CTA opens this
+// instead of linking to the app.
 // ---------------------------------------------------------------------------
 
 const signupModal = document.getElementById('signup-modal');
@@ -95,6 +110,10 @@ function closeSignupModal() {
 }
 
 signupTriggers.forEach((trigger) => {
+  if (SIGNUP_OPEN && trigger.dataset.signupTrigger !== 'sales') {
+    trigger.href = APP_URL + '/login';
+    return;
+  }
   trigger.addEventListener('click', openSignupModal);
 });
 
